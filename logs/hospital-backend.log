@@ -1,0 +1,268 @@
+2026-06-27 17:42:38 INFO  com.hospital.HospitalApplication - Starting HospitalApplication using Java 17.0.10 with PID 22580 (E:\work\hospital-appointment-system2\hospital-appointment-system\hospital-backend\target\classes started by HP in E:\work\hospital-appointment-system2\hospital-appointment-system\hospital-backend)
+2026-06-27 17:42:38 DEBUG com.hospital.HospitalApplication - Running with Spring Boot v3.2.3, Spring v6.1.4
+2026-06-27 17:42:38 INFO  com.hospital.HospitalApplication - No active profile set, falling back to 1 default profile: "default"
+2026-06-27 17:42:41 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-27 17:42:41 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 265 ms. Found 7 JPA repository interfaces.
+2026-06-27 17:42:44 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-06-27 17:42:44 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-06-27 17:42:44 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2026-06-27 17:42:44 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-06-27 17:42:44 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 6025 ms
+2026-06-27 17:42:45 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-06-27 17:42:45 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2026-06-27 17:42:45 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-06-27 17:42:46 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-27 17:42:46 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-06-27 17:42:48 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7d5ef1c3
+2026-06-27 17:42:48 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-06-27 17:42:48 WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-27 17:42:51 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-27 17:42:51 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-27 17:42:53 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-27 17:42:55 INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+2026-06-27 17:42:55 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2026-06-27 17:42:55 INFO  com.hospital.HospitalApplication - Started HospitalApplication in 18.035 seconds (process running for 19.172)
+2026-06-27 17:43:22 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-27 17:43:22 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-06-27 17:43:22 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2026-06-27 17:43:33 ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.IllegalArgumentException: When allowCredentials is true, allowedOrigins cannot contain the special value "*" since that cannot be set on the "Access-Control-Allow-Origin" response header. To allow credentials to a set of origins, list them explicitly or consider using "allowedOriginPatterns" instead.] with root cause
+java.lang.IllegalArgumentException: When allowCredentials is true, allowedOrigins cannot contain the special value "*" since that cannot be set on the "Access-Control-Allow-Origin" response header. To allow credentials to a set of origins, list them explicitly or consider using "allowedOriginPatterns" instead.
+	at org.springframework.web.cors.CorsConfiguration.validateAllowCredentials(CorsConfiguration.java:572)
+	at org.springframework.web.servlet.handler.AbstractHandlerMapping.getHandler(AbstractHandlerMapping.java:542)
+	at org.springframework.web.servlet.DispatcherServlet.getHandler(DispatcherServlet.java:1283)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1065)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:109)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+2026-06-27 17:49:15 INFO  com.hospital.HospitalApplication - Starting HospitalApplication using Java 17.0.10 with PID 24796 (E:\work\hospital-appointment-system2\hospital-appointment-system\hospital-backend\target\classes started by HP in E:\work\hospital-appointment-system2\hospital-appointment-system\hospital-backend)
+2026-06-27 17:49:15 DEBUG com.hospital.HospitalApplication - Running with Spring Boot v3.2.3, Spring v6.1.4
+2026-06-27 17:49:15 INFO  com.hospital.HospitalApplication - No active profile set, falling back to 1 default profile: "default"
+2026-06-27 17:49:21 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-27 17:49:21 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 386 ms. Found 7 JPA repository interfaces.
+2026-06-27 17:49:28 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-06-27 17:49:28 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-06-27 17:49:28 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2026-06-27 17:49:28 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-06-27 17:49:28 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 12520 ms
+2026-06-27 17:49:29 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-06-27 17:49:29 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2026-06-27 17:49:30 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-06-27 17:49:30 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-27 17:49:31 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-06-27 17:49:32 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@34bf66af
+2026-06-27 17:49:32 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-06-27 17:49:33 WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-27 17:49:36 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-27 17:49:36 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-27 17:49:38 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-27 17:49:40 INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+2026-06-27 17:49:40 WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2026-06-27 17:49:40 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-27 17:49:40 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-06-27 17:49:41 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-06-27 17:49:41 INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-06-27 17:49:41 ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2026-06-27 17:50:02 ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.IllegalArgumentException: When allowCredentials is true, allowedOrigins cannot contain the special value "*" since that cannot be set on the "Access-Control-Allow-Origin" response header. To allow credentials to a set of origins, list them explicitly or consider using "allowedOriginPatterns" instead.] with root cause
+java.lang.IllegalArgumentException: When allowCredentials is true, allowedOrigins cannot contain the special value "*" since that cannot be set on the "Access-Control-Allow-Origin" response header. To allow credentials to a set of origins, list them explicitly or consider using "allowedOriginPatterns" instead.
+	at org.springframework.web.cors.CorsConfiguration.validateAllowCredentials(CorsConfiguration.java:572)
+	at org.springframework.web.servlet.handler.AbstractHandlerMapping.getHandler(AbstractHandlerMapping.java:542)
+	at org.springframework.web.servlet.DispatcherServlet.getHandler(DispatcherServlet.java:1283)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1065)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:109)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+2026-06-27 17:52:18 INFO  com.hospital.HospitalApplication - Starting HospitalApplication using Java 17.0.10 with PID 26368 (E:\work\hospital-appointment-system2\hospital-appointment-system\hospital-backend\target\classes started by HP in E:\work\hospital-appointment-system2\hospital-appointment-system\hospital-backend)
+2026-06-27 17:52:18 DEBUG com.hospital.HospitalApplication - Running with Spring Boot v3.2.3, Spring v6.1.4
+2026-06-27 17:52:18 INFO  com.hospital.HospitalApplication - No active profile set, falling back to 1 default profile: "default"
+2026-06-27 17:52:20 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-27 17:52:20 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 158 ms. Found 7 JPA repository interfaces.
+2026-06-27 17:52:22 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-06-27 17:52:22 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-06-27 17:52:22 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2026-06-27 17:52:22 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-06-27 17:52:22 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3674 ms
+2026-06-27 17:52:22 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-06-27 17:52:23 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2026-06-27 17:52:23 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-06-27 17:52:23 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-27 17:52:23 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-06-27 17:52:25 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@160546b1
+2026-06-27 17:52:25 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-06-27 17:52:25 WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-27 17:52:28 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-27 17:52:28 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-27 17:52:31 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-27 17:52:32 INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+2026-06-27 17:52:32 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2026-06-27 17:52:32 INFO  com.hospital.HospitalApplication - Started HospitalApplication in 15.561 seconds (process running for 17.425)
+2026-06-27 17:52:33 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-27 17:52:33 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-06-27 17:52:33 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2026-06-27 17:52:45 INFO  com.hospital.logging.LoggingAspect - Entering AuthController.login with args=[{password=admin123, email=admin@hospital.com}]
+2026-06-27 17:52:45 INFO  c.hospital.controller.AuthController - Login attempt for email=admin@hospital.com
+2026-06-27 17:52:46 WARN  c.hospital.controller.AuthController - No account found for login email=admin@hospital.com
+2026-06-27 17:52:46 INFO  com.hospital.logging.LoggingAspect - Exiting AuthController.login with result=<401 UNAUTHORIZED Unauthorized,{error=No account found with this email.},[]>
+2026-06-27 17:58:06 INFO  com.hospital.logging.LoggingAspect - Entering AuthController.login with args=[{email=Anandi@gmail.com, password=Admini123}]
+2026-06-27 17:58:06 INFO  c.hospital.controller.AuthController - Login attempt for email=Anandi@gmail.com
+2026-06-27 17:58:06 INFO  com.hospital.logging.LoggingAspect - Exiting AuthController.login with result=<401 UNAUTHORIZED Unauthorized,{error=Invalid password.},[]>
+2026-06-27 18:00:45 INFO  com.hospital.logging.LoggingAspect - Entering AuthController.login with args=[{email=Anandi@gmail.com, password=Admin@123}]
+2026-06-27 18:00:45 INFO  c.hospital.controller.AuthController - Login attempt for email=Anandi@gmail.com
+2026-06-27 18:00:45 INFO  com.hospital.logging.LoggingAspect - Exiting AuthController.login with result=<200 OK OK,{role=HOSPITAL_ADMIN, ownerName=Tushar B.Mantode, hospitalId=2, active=true, id=2, hospitalName=Anandi Multispecialty Dental Clinic, email=Anandi@gmail.com, contactNo=7620030656},[]>
+2026-06-27 18:00:45 INFO  com.hospital.logging.LoggingAspect - Entering HospitalController.getById with args=[2]
+2026-06-27 18:00:46 INFO  com.hospital.logging.LoggingAspect - Exiting HospitalController.getById with result=<200 OK OK,com.hospital.entity.Hospital@429844bd,[]>
+2026-06-27 18:00:46 INFO  com.hospital.logging.LoggingAspect - Entering AppointmentController.getByHospital with args=[2]
+2026-06-27 18:00:46 INFO  com.hospital.logging.LoggingAspect - Entering CustomerController.getByHospital with args=[2]
+2026-06-27 18:00:46 INFO  com.hospital.logging.LoggingAspect - Entering UserController.getByRole with args=[2, DOCTOR]
+2026-06-27 18:00:46 INFO  c.hospital.controller.UserController - Fetching users for hospitalId=2 and role=DOCTOR
+2026-06-27 18:00:46 INFO  com.hospital.logging.LoggingAspect - Exiting AppointmentController.getByHospital with result=[]
+2026-06-27 18:00:46 INFO  com.hospital.logging.LoggingAspect - Exiting CustomerController.getByHospital with result=[]
+2026-06-27 18:00:46 INFO  com.hospital.logging.LoggingAspect - Exiting UserController.getByRole with result=[]
+2026-06-27 18:01:08 INFO  com.hospital.logging.LoggingAspect - Entering AppointmentController.getByHospital with args=[2]
+2026-06-27 18:01:08 INFO  com.hospital.logging.LoggingAspect - Entering UserController.getByRole with args=[2, DOCTOR]
+2026-06-27 18:01:08 INFO  com.hospital.logging.LoggingAspect - Entering CustomerController.getByHospital with args=[2]
+2026-06-27 18:01:08 INFO  c.hospital.controller.UserController - Fetching users for hospitalId=2 and role=DOCTOR
+2026-06-27 18:01:08 INFO  com.hospital.logging.LoggingAspect - Exiting UserController.getByRole with result=[]
+2026-06-27 18:01:08 INFO  com.hospital.logging.LoggingAspect - Exiting CustomerController.getByHospital with result=[]
+2026-06-27 18:01:08 INFO  com.hospital.logging.LoggingAspect - Exiting AppointmentController.getByHospital with result=[]
+2026-06-27 18:01:10 INFO  com.hospital.logging.LoggingAspect - Entering CustomerController.getByHospital with args=[2]
+2026-06-27 18:01:10 INFO  com.hospital.logging.LoggingAspect - Exiting CustomerController.getByHospital with result=[]
+2026-06-27 18:01:12 INFO  com.hospital.logging.LoggingAspect - Entering UserController.getByHospital with args=[2]
+2026-06-27 18:01:12 INFO  c.hospital.controller.UserController - Fetching users for hospitalId=2
+2026-06-27 18:01:13 INFO  com.hospital.logging.LoggingAspect - Exiting UserController.getByHospital with result=[]
+2026-06-27 18:01:13 INFO  com.hospital.logging.LoggingAspect - Entering UserController.getByRole with args=[2, DOCTOR]
+2026-06-27 18:01:13 INFO  c.hospital.controller.UserController - Fetching users for hospitalId=2 and role=DOCTOR
+2026-06-27 18:01:14 INFO  com.hospital.logging.LoggingAspect - Exiting UserController.getByRole with result=[]
+2026-06-27 18:01:15 INFO  com.hospital.logging.LoggingAspect - Entering MedicineController.byHospital with args=[2]
+2026-06-27 18:01:15 INFO  com.hospital.logging.LoggingAspect - Entering MedicineService.findByHospital with args=[2]
+2026-06-27 18:01:15 INFO  c.hospital.service.MedicineService - Fetching medicines for hospitalId=2
+2026-06-27 18:01:15 INFO  com.hospital.logging.LoggingAspect - Exiting MedicineService.findByHospital with result=[]
+2026-06-27 18:01:15 INFO  com.hospital.logging.LoggingAspect - Exiting MedicineController.byHospital with result=<200 OK OK,[],[]>
+2026-06-27 18:01:16 INFO  com.hospital.logging.LoggingAspect - Entering PrescriptionController.byHospital with args=[2]
+2026-06-27 18:01:16 INFO  com.hospital.logging.LoggingAspect - Entering PrescriptionService.findByHospital with args=[2]
+2026-06-27 18:01:16 INFO  c.h.service.PrescriptionService - Fetching prescriptions for hospitalId=2
+2026-06-27 18:01:17 INFO  com.hospital.logging.LoggingAspect - Exiting PrescriptionService.findByHospital with result=[]
+2026-06-27 18:01:17 INFO  com.hospital.logging.LoggingAspect - Exiting PrescriptionController.byHospital with result=<200 OK OK,[],[]>
+2026-06-27 18:01:26 INFO  com.hospital.logging.LoggingAspect - Entering PrescriptionController.byHospital with args=[2]
+2026-06-27 18:01:26 INFO  com.hospital.logging.LoggingAspect - Entering UserController.getByRole with args=[2, DOCTOR]
+2026-06-27 18:01:26 INFO  com.hospital.logging.LoggingAspect - Entering PrescriptionService.findByHospital with args=[2]
+2026-06-27 18:01:26 INFO  c.h.service.PrescriptionService - Fetching prescriptions for hospitalId=2
+2026-06-27 18:01:26 INFO  c.hospital.controller.UserController - Fetching users for hospitalId=2 and role=DOCTOR
+2026-06-27 18:01:27 INFO  com.hospital.logging.LoggingAspect - Exiting PrescriptionService.findByHospital with result=[]
+2026-06-27 18:01:27 INFO  com.hospital.logging.LoggingAspect - Exiting PrescriptionController.byHospital with result=<200 OK OK,[],[]>
+2026-06-27 18:01:27 INFO  com.hospital.logging.LoggingAspect - Exiting UserController.getByRole with result=[]
+2026-06-27 18:01:28 INFO  com.hospital.logging.LoggingAspect - Entering AppointmentController.getByHospital with args=[2]
+2026-06-27 18:01:28 INFO  com.hospital.logging.LoggingAspect - Exiting AppointmentController.getByHospital with result=[]
+2026-06-27 18:01:30 INFO  com.hospital.logging.LoggingAspect - Entering CustomerController.getByHospital with args=[2]
+2026-06-27 18:01:30 INFO  com.hospital.logging.LoggingAspect - Entering UserController.getByHospital with args=[2]
+2026-06-27 18:01:30 INFO  com.hospital.logging.LoggingAspect - Entering AppointmentController.getByHospital with args=[2]
+2026-06-27 18:01:30 INFO  c.hospital.controller.UserController - Fetching users for hospitalId=2
+2026-06-27 18:01:30 INFO  com.hospital.logging.LoggingAspect - Exiting CustomerController.getByHospital with result=[]
+2026-06-27 18:01:30 INFO  com.hospital.logging.LoggingAspect - Exiting UserController.getByHospital with result=[]
+2026-06-27 18:01:30 INFO  com.hospital.logging.LoggingAspect - Exiting AppointmentController.getByHospital with result=[]
+2026-06-27 18:02:17 INFO  com.hospital.logging.LoggingAspect - Entering AuthController.login with args=[{email=Anandi@gmail.com, password=Admin@123}]
+2026-06-27 18:02:17 INFO  c.hospital.controller.AuthController - Login attempt for email=Anandi@gmail.com
+2026-06-27 18:02:17 INFO  com.hospital.logging.LoggingAspect - Exiting AuthController.login with result=<200 OK OK,{role=HOSPITAL_ADMIN, ownerName=Tushar B.Mantode, hospitalId=2, active=true, id=2, hospitalName=Anandi Multispecialty Dental Clinic, email=Anandi@gmail.com, contactNo=7620030656},[]>
+2026-06-27 18:02:17 INFO  com.hospital.logging.LoggingAspect - Entering HospitalController.getById with args=[2]
+2026-06-27 18:02:18 INFO  com.hospital.logging.LoggingAspect - Exiting HospitalController.getById with result=<200 OK OK,com.hospital.entity.Hospital@21d6472f,[]>
+2026-06-27 18:02:18 INFO  com.hospital.logging.LoggingAspect - Entering AppointmentController.getByHospital with args=[2]
+2026-06-27 18:02:18 INFO  com.hospital.logging.LoggingAspect - Entering UserController.getByRole with args=[2, DOCTOR]
+2026-06-27 18:02:18 INFO  c.hospital.controller.UserController - Fetching users for hospitalId=2 and role=DOCTOR
+2026-06-27 18:02:18 INFO  com.hospital.logging.LoggingAspect - Entering CustomerController.getByHospital with args=[2]
+2026-06-27 18:02:18 INFO  com.hospital.logging.LoggingAspect - Exiting UserController.getByRole with result=[]
+2026-06-27 18:02:18 INFO  com.hospital.logging.LoggingAspect - Exiting AppointmentController.getByHospital with result=[]
+2026-06-27 18:02:18 INFO  com.hospital.logging.LoggingAspect - Exiting CustomerController.getByHospital with result=[]

@@ -3,6 +3,8 @@ package com.hospital.service;
 import java.util.List;
 import java.util.Optional;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,15 +14,19 @@ import com.hospital.repository.MedicineRepository;
 @Service
 public class MedicineService {
 
+    private static final Logger log = LoggerFactory.getLogger(MedicineService.class);
+
     @Autowired
     private MedicineRepository repo;
 
     public Medicine save(Medicine m) {
+        log.info("Saving medicine {} for hospital {}", m.getMedicineName(), m.getHospitalId());
         if (m.getActive() == null) m.setActive(true);
         return repo.save(m);
     }
 
     public Medicine update(Long id, Medicine m) {
+        log.info("Updating medicine id={}", id);
         Medicine ex = repo.findById(id)
                 .orElseThrow(() -> new RuntimeException("Medicine not found: " + id));
         ex.setMedicineName(m.getMedicineName());
@@ -36,6 +42,7 @@ public class MedicineService {
     }
 
     public List<Medicine> findByHospital(Long hospitalId) {
+        log.info("Fetching medicines for hospitalId={}", hospitalId);
         return repo.findByHospitalIdAndActiveTrue(hospitalId);
     }
 
@@ -52,6 +59,7 @@ public class MedicineService {
     }
 
     public void delete(Long id) {
+        log.info("Deactivating medicine id={}", id);
         repo.findById(id).ifPresent(m -> {
             m.setActive(false);
             repo.save(m);
@@ -59,6 +67,7 @@ public class MedicineService {
     }
 
     public void hardDelete(Long id) {
+        log.info("Hard deleting medicine id={}", id);
         repo.deleteById(id);
     }
 }

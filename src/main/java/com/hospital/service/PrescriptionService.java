@@ -4,6 +4,8 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,10 +15,13 @@ import com.hospital.repository.PrescriptionRepository;
 @Service
 public class PrescriptionService {
 
+    private static final Logger log = LoggerFactory.getLogger(PrescriptionService.class);
+
     @Autowired
     private PrescriptionRepository repo;
 
     public Prescription save(Prescription p) {
+        log.info("Saving prescription for patient {}", p.getPatientName());
         p.setRegistrationDate(LocalDate.now());
         if (p.getPrescriptionDate() == null) p.setPrescriptionDate(LocalDate.now());
         if (p.getStatus() == null) p.setStatus("Active");
@@ -24,6 +29,7 @@ public class PrescriptionService {
     }
 
     public Prescription update(Long id, Prescription p) {
+        log.info("Updating prescription id={}", id);
         Prescription ex = repo.findById(id)
                 .orElseThrow(() -> new RuntimeException("Prescription not found: " + id));
         ex.setPatientName(p.getPatientName());
@@ -54,6 +60,7 @@ public class PrescriptionService {
     }
 
     public List<Prescription> findByHospital(Long hospitalId) {
+        log.info("Fetching prescriptions for hospitalId={}", hospitalId);
         return repo.findByHospitalIdOrderByPrescriptionDateDesc(hospitalId);
     }
 
@@ -79,6 +86,7 @@ public class PrescriptionService {
     }
 
     public void delete(Long id) {
+        log.info("Cancelling prescription id={}", id);
         repo.findById(id).ifPresent(p -> {
             p.setStatus("Cancelled");
             repo.save(p);

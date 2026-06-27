@@ -1,0 +1,24 @@
+# ─── Database ─────────────────────────────────────
+spring.datasource.url=${DB_URL:jdbc:mysql://localhost:3306/hospitalappdb03?useSSL=false}
+spring.datasource.username=${DB_USERNAME:root}
+spring.datasource.password=${DB_PASSWORD:}
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+
+# ─── JPA / Hibernate ─────────────────────────────
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQLDialect
+spring.jpa.properties.hibernate.format_sql=true
+
+# ─── Server ──────────────────────────────────────
+server.port=${PORT:8080}
+server.forward-headers-strategy=framework
+
+# ─── Logging ─────────────────────────────────────
+logging.level.com.hospital=DEBUG
+
+# ─── Actuator / health checks ───────────────────
+management.endpoints.web.exposure.include=health,info
+management.endpoint.health.probes.enabled=true
+management.health.livenessstate.enabled=true
+management.health.readinessstate.enabled=true

@@ -4,6 +4,8 @@ import com.hospital.entity.Hospital;
 import com.hospital.entity.User;
 import com.hospital.repository.HospitalRepository;
 import com.hospital.repository.UserRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,6 +19,8 @@ import java.util.Optional;
 @CrossOrigin(origins = "*")
 public class AuthController {
 
+    private static final Logger log = LoggerFactory.getLogger(AuthController.class);
+
     @Autowired
     private HospitalRepository hospitalRepo;
 
@@ -27,8 +31,10 @@ public class AuthController {
     public ResponseEntity<?> login(@RequestBody Map<String, String> body) {
         String email    = body.get("email");
         String password = body.get("password");
+        log.info("Login attempt for email={}", email);
 
         if (email == null || password == null) {
+            log.warn("Login request missing email or password");
             return ResponseEntity.badRequest()
                     .body(Map.of("error", "Email and password are required."));
         }
@@ -86,6 +92,7 @@ public class AuthController {
             }
         }
 
+        log.warn("No account found for login email={}", email);
         return ResponseEntity.status(401)
                 .body(Map.of("error", "No account found with this email."));
     }
